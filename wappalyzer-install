@@ -1,0 +1,3 @@
+apt-get -y install nodejs npm jq yarn
+npm i puppeteer
+npm i -g wappalyzer
