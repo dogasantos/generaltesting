@@ -3,3 +3,5 @@ npm i puppeteer
 npm i -g wappalyzer
 cd /usr/local/lib/
 PUPPETEER_PRODUCT=firefox npm install puppeteer@5.0.0
+npm i puppeteer
+
