@@ -1,5 +1,5 @@
 apt-get -y install nodejs npm jq yarn
 npm i puppeteer
 npm i -g wappalyzer
-cd /usr/local/lib/node_modules/wappalyzer
+cd /usr/local/lib/
 PUPPETEER_PRODUCT=firefox npm install puppeteer@5.0.0
