@@ -79,6 +79,7 @@ echo '#!/bin/bash' > /usr/bin/webmapper
 echo "python3 $workdir/webmapper.py \$@" >> /usr/bin/webmapper
 chmod 755 /usr/bin/webmapper
 
+wget https://raw.githubusercontent.com/dogasantos/nmap-elasticsearch-nse/master/elasticsearch.nse -O /usr/share/nmap/scripts/elasticsearch.nse
 
 
 go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
