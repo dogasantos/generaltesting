@@ -30,6 +30,7 @@ cd masscan
 make
 make install
 
+apt-get install -y libatk1.0-dev libatk-bridge2.0-dev libxkbcommon-dev libxdamage-dev libgtk-3-dev
 # fix old nodejs package provided by apt:
 npm cache clean -f
 npm install -g n
