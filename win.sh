@@ -59,7 +59,8 @@ then
 	then
 		host=$(cat base.ldap |grep dnsHostName|cut -f2 -d ':'| tr "[A-Z]" "[a-z]" |tr -d "[:blank:]")
 		domain=$(cat base.ldap |grep ldapServiceName|awk -F ":" '{print $2}'| tr "[A-Z]" "[a-z]" |tr -d "[:blank:]")
-		ldapsearch -x -b CN=Users,DC=htb,DC=local "*" -H ldap://$ip > cn-users.ldap 2>&1
+		ldapsearch -x -H "ldap://${ip}" -b "$(awk -F': *' 'BEGIN{IGNORECASE=1}/^configurationNamingContext:/{print $2; exit}' base.ldap | sed -E 's/^[[:space:]]*CN=Configuration/CN=Users/I')" '(objectClass=user)' > cn-users.ldap 2>&1
+
 
 	else
 		domain=$(cat tcp.nmap.txt |grep Domain|head -n1|cut -f2 -d :|cut -f1 -d ,|tr "[A-Z]" "[a-z]" |tr -d "[:blank:]")
